@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
@@ -80,17 +81,33 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <Header addTask={showAddTask}
-        toggleAdd={setShowAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {
-        tasks.length > 0 ?
-          <Tasks tasks={tasks} onDelete={deleteTask}
-            toggle={toggleReminder} />
-          : 'No tasks'
-      }
-    </div>
+    <Router>
+      <div className="container">
+        <Header addTask={showAddTask}
+          toggleAdd={setShowAddTask} />
+
+        <Routes>
+
+          <Route path="/" exact
+            element={
+              <>
+                {showAddTask && <AddTask onAdd={addTask} />}
+                {
+                  tasks.length > 0 ?
+                    <Tasks tasks={tasks} onDelete={deleteTask}
+                      toggle={toggleReminder} />
+                    : 'No tasks'
+                }
+              </>
+            } />
+
+
+
+          <Route path='/about' element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router >
   );
 }
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer>
-        <p>V 1.0.0</p>
+        <p>Copyright &copy; 2022 abbassays Pak, All rights reserved</p>
         <Link to="/about">About</Link>
     </footer>
   )

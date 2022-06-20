@@ -6,13 +6,13 @@ import {useLocation} from 'react-router-dom';
 
 // function definition
 function Header(props) {
-    // const location = useLocation();
+    const location = useLocation();
     return (
         <header className='header'>
             <h1 style={HeaderStyle} >Task Tracker</h1>
-            {
+            {   location.pathname === '/' &&
                 <Button
-                bgcolor={!props.addTask ? 'green' : 'red'}
+                bgcolor={!props.addTask ? '#001128' : '#a70303'}
                 text={!props.addTask ? 'Add' : 'Hide'}
                 onClick={() => { props.toggleAdd(!props.addTask) }}
             />}
@@ -22,7 +22,7 @@ function Header(props) {
 
 // style
 const HeaderStyle = {
-    color: "blue",
+    color: "black",
 }
 
 

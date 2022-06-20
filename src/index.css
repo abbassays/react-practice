@@ -18,7 +18,8 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
-  /* background-image: radial-gradient(circle, #7b96ce, rgb(6, 32, 13), #1e3c7c); */
+  /* background-color: #3f76bf; */
+  background-image: linear-gradient(to bottom,#d0d0d0, #3f76bf);
 }
 
 .header {
@@ -63,7 +64,7 @@ body {
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid black;
 }
 
 .task h3 {
